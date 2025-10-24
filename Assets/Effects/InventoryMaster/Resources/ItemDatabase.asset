@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4c29ddb3cf21d4e9b0596a8ba26af7, type: 3}
+  m_Name: ItemDatabase
+  m_EditorClassIdentifier: 
+  itemList:
+  - itemName: 
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      +
+      20 Health'
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemValue: 1
+    itemType: 2
+    itemWeight: 0
+    maxStack: 0
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Fusil d'assaut
+    itemID: 1
+    itemDesc: 'Fusil d''assaut alien
+
+      + 10 Health
+
+      + 10 Armor'
+    itemIcon: {fileID: 21300000, guid: c368849f67d56d94ea7f92758ba0b642, type: 3}
+    itemModel: {fileID: 8046777998563582645, guid: ee8b305b4d779a043b80b64f8e9168d1,
+      type: 3}
+    itemValue: 10
+    itemType: 1
+    itemWeight: 5
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 10
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 10
+  - itemName: Casque
+    itemID: 2
+    itemDesc: 'Casque en cuire
+
+      + 10 Armor'
+    itemIcon: {fileID: 21300000, guid: 63dca6d4e4e873a4cb09997656d54082, type: 3}
+    itemModel: {fileID: 233274999208949916, guid: 808bc36c17998534190db11623c389b5,
+      type: 3}
+    itemValue: 10
+    itemType: 4
+    itemWeight: 5
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 10
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 10
+  - itemName: Gants
+    itemID: 3
+    itemDesc: 'Gants en fer
+
+      Gants en Fer'
+    itemIcon: {fileID: 21300000, guid: 9e108c3d338a850449f80cf654004b28, type: 3}
+    itemModel: {fileID: 7512472404826818514, guid: 3c424ddc8f09cb04a955776b333a4166,
+      type: 3}
+    itemValue: 10
+    itemType: 11
+    itemWeight: 5
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 10
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 10
