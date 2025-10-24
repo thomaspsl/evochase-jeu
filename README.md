@@ -1,7 +1,7 @@
 <div align='center'>
   
-  [<img src='app/favicon.ico' alt='Evochase' height='150' style='margin: 20px'>](https://thomaspsl.itch.io/evochase)
-  
+  [<img src='https://github.com/user-attachments/assets/bd9061bc-9f06-4e72-a138-5dabeeec1ef9' alt='Evochase' height='150' style='margin: 20px'>](https://thomaspsl.itch.io/evochase)
+
   # Evochase Project
 
   #### It's a video [game](https://thomaspsl.itch.io/evochase) set in a dark and oppressive sci-fi atmosphere, built with [Unity](https://unity.com).
@@ -14,7 +14,7 @@
 
   [Contributors](#-contributors) • [Description](#-description) • [How To Use](#-how-to-use) • [Key Features](#-key-features) • [Emailware](#-emailware) • [Credits](#-credits) • [Support](#-support) • [License](#-license)
 
-  <!-- ![HelpDesk _ D_pannage Informatique En Ligne](https://github.com/user-attachments/assets/558867fa-cbad-4ced-853c-501dfd3d4ba1) -->
+  ![Evochase](https://github.com/user-attachments/assets/3cbabfeb-c922-4e43-bae3-fbfa023cb3f4)
 
 </div>
 
