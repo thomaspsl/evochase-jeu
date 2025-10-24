@@ -12,7 +12,7 @@
   [![WebGL](https://img.shields.io/badge/WebGL-2.0-9d0d0b)](https://get.webgl.org)
   [![Windows](https://img.shields.io/badge/Windows-11.25-0db6f1)](https://www.microsoft.com/en-us/windows)
 
-  [Contributors](#-contributors) • [Description](#-description) • [How To Use](#-how-to-use) • [Key Features](#-key-features) • [Emailware](#-emailware) • [Credits](#-credits) • [Support](#-support) • [License](#-license)
+  [Contributors](#-contributors) • [Description](#-description) • [How To Use](#-how-to-use) • [Key Features](#-key-features) • [Credits](#-credits) • [Support](#-support) • [License](#-license)
 
   ![Evochase](https://github.com/user-attachments/assets/3cbabfeb-c922-4e43-bae3-fbfa023cb3f4)
 
@@ -22,7 +22,7 @@
     
   ## 👨‍🎓 Contributors
 
-  ![Contributors](https://contrib.rocks/image?repo=thomaspsl/evochase-jeu)
+  ![Contributors](https://contrib.rocks/image?r=&repo=thomaspsl/evochase-jeu)
 
   ## 📚 Description
 
