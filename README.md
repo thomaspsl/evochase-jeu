@@ -26,7 +26,7 @@
 
   ## 📚 Description
 
-  Evochase est un jeu vidéo 3D semi-réaliste de type survival horror plongeant le joueur dans une station spatiale sombre et oppressante. Conçu autour de la tension, de la lumière et de la survie, il combine exploration prudente, gestion des ressources et affrontements contre des créatures hostiles. Développé sous Unity, le projet met en avant une direction artistique sombre, un gameplay immersif et une atmosphère visuelle intense.
+  Evochase is a semi-realistic 3D survival horror video game that immerses the player in a dark and oppressive space station. Designed around tension, light, and survival, it combines cautious exploration, resource management, and intense combat against hostile creatures. Developed with Unity, the project emphasizes a dark artistic direction, immersive gameplay, and a visually intense atmosphere.
 
   ## 🚀 How To Use
 
