@@ -76,5 +76,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5792744366562842766, guid: 4e7afdf31c20ebf419ea38bf1d358719,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6396689512068295123}
   m_SourcePrefab: {fileID: 100100000, guid: 4e7afdf31c20ebf419ea38bf1d358719, type: 3}
+--- !u!1 &8612465135822639881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5792744366562842766, guid: 4e7afdf31c20ebf419ea38bf1d358719,
+    type: 3}
+  m_PrefabInstance: {fileID: 2875101025775815559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6396689512068295123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612465135822639881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cebe256c1604b4ebc3a99a5204333d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviorCrab
+  chaseRange: 20
+  attackRange: 5
+  damage: 10
+  attackRepeatTime: 2
+  attackTime: 0
+  attackSound: {fileID: 8300000, guid: 188362582f46af4489fcb273219ddd69, type: 3}
+  deathSound: {fileID: 8300000, guid: 5ca9ece81f968c24580e8503370337d6, type: 3}
+  currentHealth: 100
+  Target: {fileID: 0}

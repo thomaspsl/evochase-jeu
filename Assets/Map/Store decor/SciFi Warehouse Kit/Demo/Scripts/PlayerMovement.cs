@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private float nextFootstep = 0f;
 
     [Header("Win Detection")]
-    public Vector3 camPos;
-    public Vector3 winPos;
+    public Transform ATM;
+    private Transform Player;
 
     private Vector3 velocity;
     private bool isGrounded;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public void Awake()
     {
         this.AudioSource = GetComponent<AudioSource>();
+        this.Player = GetComponent<Transform>();
     }
 
     void Update()
@@ -68,11 +69,9 @@ public class PlayerMovement : MonoBehaviour
     {
         bool isMoving = Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f;
 
-        if (isMoving && isGrounded)
-        {
+        if (isMoving && isGrounded) {
             nextFootstep -= Time.deltaTime;
-            if (nextFootstep <= 0)
-            {
+            if (nextFootstep <= 0) {
                 this.AudioSource.PlayOneShot(footStepSound, 0.7f);
                 nextFootstep = footStepDelay;
             }
@@ -81,11 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleWinCondition()
     {
-        camPos = GameObject.Find("Camera").transform.position;
-        winPos = GameObject.Find("ATM").transform.position;
-
-        if (Vector3.Distance(camPos, winPos) < 2f)
-        {
+        // Debug.Log($"Player X: {this.Player.position.x} | ATM X: {this.ATM.position.x}");
+        if (Vector3.Distance(this.Player.position, this.ATM.position) < 2f) {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene("Win");

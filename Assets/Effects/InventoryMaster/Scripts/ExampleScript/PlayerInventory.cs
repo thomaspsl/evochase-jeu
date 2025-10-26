@@ -18,8 +18,7 @@ public class PlayerInventory : MonoBehaviour
 
     private InputManager inputManagerDatabase;
 
-    
-    Image hpImage;
+    public Image hpImage;
     Image manaImage;
 
     float maxHealth = 100;
@@ -33,8 +32,6 @@ public class PlayerInventory : MonoBehaviour
     public float currentArmor = 0;
 
     int normalSize = 3;
-
-
 
     public void OnEnable()
     {
@@ -158,8 +155,6 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
-        hpImage = GameObject.Find("currentHP").GetComponent<Image>();
-
         if (inputManagerDatabase == null)
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
 
@@ -259,21 +254,19 @@ public class PlayerInventory : MonoBehaviour
             if (item.itemAttributes[i].attributeName == "Damage")
                 currentDamage -= item.itemAttributes[i].attributeValue;
         }
-      
     }
-
-
 
     // Update is called once per frame
     void Update()
     {
         //Barre de vie
-        float percentageHP = ((currentHealth * 100) / maxHealth) / 100;
-        hpImage.fillAmount = percentageHP;
-
+        if (hpImage != null)
+        {
+            hpImage.fillAmount = Mathf.Clamp01(currentHealth / maxHealth);
+        }
 
         //Test dégats
-        if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.V))
         {
             ApplyDamage(10);
         }

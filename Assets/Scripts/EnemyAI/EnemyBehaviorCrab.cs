@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 {
 	private Animator anim;
-	private Transform Target;
 	private UnityEngine.AI.NavMeshAgent agent;
 	private bool attacking = false;
 
@@ -35,6 +34,9 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 	private int currentHealth = 100;
 	public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
+	[Header("Target")]
+	public Transform Target;
+
 	// Propriétés
 	private AudioSource AudioSource { get; set; }
 
@@ -52,7 +54,6 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 		agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
 		anim = GetComponent<Animator>();
 		basePositions = transform.position;
-		Target = GameObject.Find("Player").transform;
 	}
 
 	// Update is called once per frame
@@ -60,7 +61,7 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 	{
 		if (!isDead)
 		{
-			Distance = Vector3.Distance(Target.position, transform.position);
+			Distance = Vector3.Distance(this.Target.position, transform.position);
 			DistanceBase = Vector3.Distance(basePositions, transform.position);
 
 			if (currentHealth <= 0)
@@ -83,7 +84,7 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 	void attack()
 	{
 		agent.destination = transform.position;
-		transform.LookAt(Target);
+		transform.LookAt(this.Target);
 
 		if (Time.time > attackTime)
 		{
@@ -110,7 +111,7 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 			}
 
 
-			Target.GetComponent<PlayerInventory>().ApplyDamage(damage);
+			this.Target.GetComponent<PlayerInventory>().ApplyDamage(damage);
 
 			Debug.Log("L'ennemi a envoyé " + damage + " points de dégats");
 			attackTime = Time.time + attackRepeatTime;
@@ -127,7 +128,7 @@ public class EnemyBehaviorCrab : MonoBehaviour, IEnemy
 	{
 		if (!attacking)
 		{
-			agent.destination = Target.position;
+			agent.destination = this.Target.position;
 			anim.Play("Armature|Walk_Cycle_1");
 		}
 	}

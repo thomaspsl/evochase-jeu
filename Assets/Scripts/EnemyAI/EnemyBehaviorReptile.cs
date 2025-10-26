@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 {
 	private Animator anim;
-	private Transform Target;
 	private UnityEngine.AI.NavMeshAgent agent;
 	private bool attacking = false;
 
@@ -35,6 +34,9 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 	private int currentHealth = 100;
 	public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
+	[Header("Target")]
+	public Transform Target;
+
     // Propriétés
     private AudioSource AudioSource { get; set; }
 
@@ -52,7 +54,6 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 		agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
 		anim = GetComponent<Animator>();
 		basePositions = transform.position;
-		Target = GameObject.Find("Player").transform;
 	}
 
 	// Update is called once per frame
@@ -60,7 +61,7 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 	{
 		if (!isDead)
 		{
-			Distance = Vector3.Distance(Target.position, transform.position);
+			Distance = Vector3.Distance(this.Target.position, transform.position);
 			DistanceBase = Vector3.Distance(basePositions, transform.position);
 
 			if (currentHealth <= 0)
@@ -84,7 +85,7 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 	void attack()
 	{
 		agent.destination = transform.position;
-		transform.LookAt(Target);
+		transform.LookAt(this.Target);
 
 		if (Time.time > attackTime)
 		{
@@ -101,7 +102,7 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 					break;
 			}
 
-			Target.GetComponent<PlayerInventory>().ApplyDamage(damage);
+			this.Target.GetComponent<PlayerInventory>().ApplyDamage(damage);
 
 			Debug.Log("L'ennemi a envoyé " + damage + " points de dégats");
 			attackTime = Time.time + attackRepeatTime;
@@ -118,7 +119,7 @@ public class EnemyBehaviorReptile : MonoBehaviour, IEnemy
 	{
 		if (!attacking)
 		{
-			agent.destination = Target.position;
+			agent.destination = this.Target.position;
 			anim.Play("Run");
 		}
 	}

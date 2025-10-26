@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Text;
+using System.Linq;
+using System;
 
-interface IEnemy
+public interface IEnemy
 {
-    int CurrentHealth { get; set; }
+    public int CurrentHealth { get; set; }
 }
 

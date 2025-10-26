@@ -85,9 +85,6 @@ public class InventoryDesign : MonoBehaviour
     public void updateAllSlots()
     {
         Image slot = null;
-#if UNITY_EDITOR
-        Object prefab = PrefabUtility.CreateEmptyPrefab("Assets/InventoryMaster/Resources/Prefabs/Slot - Inventory.prefab");
-#endif
 
         for (int i = 0; i < transform.GetChild(1).childCount; i++)
         {
@@ -98,9 +95,19 @@ public class InventoryDesign : MonoBehaviour
             slot.type = slotDesignTemp.type;
             slot.fillCenter = slotDesignTemp.fillCenter;
         }
-#if UNITY_EDITOR
-        PrefabUtility.ReplacePrefab(slot.gameObject, prefab, ReplacePrefabOptions.ConnectToPrefab);
-#endif
 
+    #if UNITY_EDITOR
+        string prefabPath = "Assets/InventoryMaster/Resources/Prefabs/Slot - Inventory.prefab";
+        GameObject prefabAsset = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        if (prefabAsset != null)
+        {
+            PrefabUtility.SaveAsPrefabAssetAndConnect(slot.gameObject, prefabPath, UnityEditor.InteractionMode.AutomatedAction);
+        }
+        else
+        {
+            PrefabUtility.SaveAsPrefabAsset(slot.gameObject, prefabPath);
+        }
+        UnityEditor.AssetDatabase.SaveAssets();
+    #endif
     }
 }

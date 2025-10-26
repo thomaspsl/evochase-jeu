@@ -204,8 +204,9 @@ GameObject:
   - component: {fileID: 9500310}
   - component: {fileID: 11432326}
   - component: {fileID: -4651977407609590077}
+  - component: {fileID: 253676063923371113}
   m_Layer: 0
-  m_Name: thc6_Luc
+  m_Name: Thc6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,6 +364,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &253676063923371113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa49032cac2300d4a96f4b214c3ff6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
+  chaseRange: 18
+  attackRange: 2
+  damage: 10
+  attackRepeatTime: 2
+  attackTime: 0
+  attackSound: {fileID: 8300000, guid: f82e1bc35ea109246bc25021f275a4bc, type: 3}
+  deathSound: {fileID: 8300000, guid: 5ca9ece81f968c24580e8503370337d6, type: 3}
+  currentHealth: 200
+  Target: {fileID: 0}
 --- !u!1 &112038
 GameObject:
   m_ObjectHideFlags: 0
