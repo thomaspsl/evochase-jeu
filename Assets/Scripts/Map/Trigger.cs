@@ -10,9 +10,6 @@ public class Trigger: MonoBehaviour
     private bool open = false;
     private bool close = false;
 
-    void Start()
-    {}
-
     void Update()
     {
         if (open) OpenDoor();
@@ -21,8 +18,7 @@ public class Trigger: MonoBehaviour
 
     void OnTriggerEnter(Collider obj)
     {
-        if (obj.transform.name == "Player")
-        {
+        if (obj.transform.name == "Player") {
             open = true;
             close = false;
         }
@@ -30,8 +26,7 @@ public class Trigger: MonoBehaviour
 
     void OnTriggerExit(Collider obj)
     {
-        if (obj.transform.name == "Player")
-        {
+        if (obj.transform.name == "Player") {
             open = false;
             close = true;
         }
@@ -42,12 +37,9 @@ public class Trigger: MonoBehaviour
         float move = speed * Time.deltaTime;
         currentValue += move;
 
-        if (currentValue <= maxOpenValue)
-        {
+        if (currentValue <= maxOpenValue) {
             door.position = new Vector3(door.position.x, door.position.y + move, door.position.z);
-        }
-        else
-        {
+        } else {
             open = false;
         }
     }
@@ -57,12 +49,9 @@ public class Trigger: MonoBehaviour
         float move = speed * Time.deltaTime;
         currentValue -= move;
 
-        if (currentValue >= 0)
-        {
+        if (currentValue >= 0) {
             door.position = new Vector3(door.position.x, door.position.y - move, door.position.z);
-        }
-        else
-        {
+        } else {
             close = false;
         }
     }

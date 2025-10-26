@@ -35,6 +35,16 @@ public class EnemyBehavior : MonoBehaviour, IEnemy
 	private int currentHealth = 100;
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
+    // Propriétés
+    private AudioSource AudioSource { get; set; }
+
+    /*
+    * Function to wake setup properties
+    */
+    public void Awake()
+    {
+       	this.AudioSource = GetComponent<AudioSource>();
+    }
 
     // Use this for initialization
     void Start()
@@ -125,23 +135,17 @@ public class EnemyBehavior : MonoBehaviour, IEnemy
 
 	public void Dead()
 	{
-		GameObject.Find("deathSound").GetComponent<AudioSource>().PlayOneShot(deathSound, 0.4f);
+		this.AudioSource.PlayOneShot(deathSound, 0.4f);
 		gameObject.GetComponent<CapsuleCollider>().enabled = false;
 		isDead = true;
 		agent.destination = transform.position;
 		anim.Play("thc4_arma|do_death");
-
-		// apparition du loot
-		//int randomNumber = Random.Range(0, loots.Length);
-		//GameObject finalLoot = loots[randomNumber];
-		//Instantiate(finalLoot, transform.position, transform.rotation);
-
 		Destroy(transform.gameObject, 20);
 	}
 
 	IEnumerator AttackAnimation(string name)
 	{
-		GameObject.Find("attackSound").GetComponent<AudioSource>().PlayOneShot(attackSound, 0.7f);
+		this.AudioSource.PlayOneShot(attackSound, 0.7f);
 		attacking = true;
 		yield return new WaitForEndOfFrame();
 		while (anim.GetCurrentAnimatorStateInfo(0).IsName(name) && anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)

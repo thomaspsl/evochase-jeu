@@ -11,13 +11,23 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private AudioClip shootSound;
 
-
     public WeaponGraphics weaponG;
 
     [SerializeField]
     private Camera cam;
     [SerializeField]
     private LayerMask mask;
+
+    // Propriétés
+    private AudioSource AudioSource { get; set; }
+
+    /*
+    * Function to wake setup properties
+    */
+    public void Awake()
+    {
+        this.AudioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -48,7 +58,7 @@ public class PlayerShoot : MonoBehaviour
         // Déclenchement de la fonction particules d'impact
         DoShootEffects();
 
-        GameObject.Find("shootSound").GetComponent<AudioSource>().PlayOneShot(shootSound, 0.4f);
+        this.AudioSource.PlayOneShot(shootSound, 0.4f);
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
             if (hit.collider.tag == "Enemy")
