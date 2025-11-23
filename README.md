@@ -4,7 +4,7 @@
 
   # Evochase Project
 
-  #### It's a video [game](https://thomaspsl.itch.io/evochase) set in a dark and oppressive sci-fi atmosphere, built with [Unity](https://unity.com).
+  It's a video [game](https://thomaspsl.itch.io/evochase) set in a dark and oppressive sci-fi atmosphere, built with [Unity](https://unity.com).
 
   [![Unity](https://img.shields.io/badge/Unity-6.2-939495)](https://unity.com)
 
